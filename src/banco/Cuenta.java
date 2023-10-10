@@ -10,7 +10,7 @@ public class Cuenta {
 	
 	public Cuenta(String numeroCuenta, String titular, double saldo) {
 		super();
-		Saldo = saldo;
+		this.Saldo = saldo;
 	}
 
 	
@@ -26,12 +26,18 @@ public class Cuenta {
 	
 
 	public void ingresar(int i) {
-		Saldo = 1000;
+		if(i >=0)
+		Saldo = Saldo+i;
+		else
+			System.out.println("No se pueden ingresar numeros negativos");
 		
 	}
 	
 	public void retirar(int i) {
-		Saldo = 0;
+		if(Saldo-i>=0 && i>=0)
+		Saldo = Saldo-i;
+		else
+			System.out.println("No tiene suficiente saldo en su cuenta o ha intentado introducir un numero positivo");
 		
 	}
 	

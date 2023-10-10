@@ -19,9 +19,6 @@ class CuentaTest {
 		
 			CuentaCliente = new Cuenta("12345", "Manuel", 0);
 		
-		double SaldoInicial =0;
-		double Monto =0;
-		
 	}
 
 	@AfterAll
@@ -30,6 +27,7 @@ class CuentaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		CuentaCliente.setSaldo(0);
 	}
 
 	@AfterEach
@@ -43,7 +41,27 @@ class CuentaTest {
 	}
 	
 	@Test
+	void testIngresarNumeroMenor0() {
+		CuentaCliente.ingresar(-1000);
+		assertEquals(CuentaCliente.getSaldo(),0);
+	}
+	
+	
+	@Test
 	void testRetirar() {
+		CuentaCliente.setSaldo(1000);
+		CuentaCliente.retirar(1000);
+		assertEquals(CuentaCliente.getSaldo(),0);
+	}
+	
+	@Test
+	void testRetirarMasSaldodelquehay() {
+		CuentaCliente.retirar(-1000);
+		assertEquals(CuentaCliente.getSaldo(),0);
+	}
+	
+	@Test
+	void testRetirarNumeroMayor0() {
 		CuentaCliente.retirar(1000);
 		assertEquals(CuentaCliente.getSaldo(),0);
 	}
