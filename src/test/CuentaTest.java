@@ -35,11 +35,6 @@ class CuentaTest {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
-	@Test
-	void test() {
-		//fail("Not yet implemented");
-	}
 	
 	@Test
 	void testIngresar() {
@@ -49,7 +44,8 @@ class CuentaTest {
 	
 	@Test
 	void testRetirar() {
-		//assertEquals(null,null);
+		CuentaCliente.retirar(1000);
+		assertEquals(CuentaCliente.getSaldo(),0);
 	}
 
 }

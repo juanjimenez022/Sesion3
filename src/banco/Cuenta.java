@@ -13,17 +13,26 @@ public class Cuenta {
 		Saldo = saldo;
 	}
 
-	public void ingresar(int i) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	public double getSaldo() {
-		return 1000;
+		return Saldo;
 	}
 
 	public void setSaldo(double saldo) {
 		this.Saldo = saldo;
+	}
+	
+	
+
+	public void ingresar(int i) {
+		Saldo = 1000;
+		
+	}
+	
+	public void retirar(int i) {
+		Saldo = 0;
+		
 	}
 	
 	
