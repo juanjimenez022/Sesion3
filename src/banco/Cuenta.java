@@ -2,6 +2,8 @@ package banco;
 
 public class Cuenta {
 
+	private String numeroCuenta;
+	private String titular;
 	private double Saldo = 0;
 
 
@@ -10,6 +12,8 @@ public class Cuenta {
 	
 	public Cuenta(String numeroCuenta, String titular, double saldo) {
 		super();
+		this.numeroCuenta=numeroCuenta;
+		this.titular=titular;
 		this.Saldo = saldo;
 	}
 
@@ -25,6 +29,30 @@ public class Cuenta {
 	
 	
 
+	public String getNumeroCuenta() {
+		return numeroCuenta;
+	}
+
+
+
+	public void setNumeroCuenta(String numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+	}
+
+
+
+	public String getTitular() {
+		return titular;
+	}
+
+
+
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+
+
+
 	public void ingresar(int i) {
 		if(i >=0)
 		Saldo = Saldo+i;
@@ -34,7 +62,7 @@ public class Cuenta {
 	}
 	
 	public void retirar(int i) {
-		if(Saldo-i>=0 && i>=0)
+		if(Saldo-i>=-500 && i>=0)
 		Saldo = Saldo-i;
 		else
 			System.out.println("No tiene suficiente saldo en su cuenta o ha intentado introducir un numero positivo");
